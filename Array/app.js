@@ -6,6 +6,11 @@ paises.forEach((pais)=>{
     console.log(pais);
 })
 
+//Otra forma de recorrer el array
+for(let pais of paises){
+    console.log(pais);
+}
+
 
 //Permite generar un nuevo arreglo haciendo algo con los elementos
 const nuevoArreglo = paises.map((pais)=>{
