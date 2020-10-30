@@ -6,10 +6,13 @@ paises.forEach((pais)=>{
     console.log(pais);
 })
 
+console.log("------------------------------------")
+
 //Otra forma de recorrer el array
 for(let pais of paises){
     console.log(pais);
 }
+console.log("------------------------------------")
 
 
 //Permite generar un nuevo arreglo haciendo algo con los elementos
@@ -17,10 +20,16 @@ const nuevoArreglo = paises.map((pais)=>{
     return `${pais} es un pais`;
 })
 
+
+console.log("------------------------------------")
+
 //Imprime el nuevo arreglo con lo modificado en el map
 nuevoArreglo.forEach((nuevo)=>{
     console.log(nuevo);
 })
+
+
+console.log("------------------------------------")
 
 
 //Buscar un elemento dentro de un array(true o false)
@@ -31,17 +40,28 @@ const buscarPais2 = paises.includes('Colombia');
 console.log(buscarPais2);
 
 
+console.log("------------------------------------")
+
+
 //Destructurar un array(extraer elementos y llamarlos como la misma variable)
 const [primero,segundo,tercero] = paises;
 //Extrae los los tres primeros datos y los guarda en esa variable
 console.log(primero,segundo,tercero);
 
 
+console.log("------------------------------------")
+
+
 //Encontrar el indice de un elemento en un array
 const indice = paises.findIndex((variable)=> variable==='Argentina')
 
+console.log("------------------------------------")
+
 //Imprime el indice en donde se encuentra el archivo sino retorna un -1
 console.log(indice);
+
+
+console.log("------------------------------------")
 
 //Filtra un array y retorna un array con elementos que cumplan la condicion
 //Importante se puede concatenar los filter filter(funcion).filter(funcion2) etc
@@ -51,14 +71,17 @@ const filtrado = paises.filter((pais)=>{
 //Solo muestra Chile sino encuentra nada array vacio
 console.log(filtrado);
 
+console.log("------------------------------------")
 
 //Devuelve si existe al menos un elemento que cumpla la condicion(true o false)
 const elementoSome = paises.some((pais)=>{
     pais === 'Chile'
 });
+
 //Retorna true porque si existe
 console.log(elementoSome);
 
+console.log("------------------------------------")
 
 //Retorna el primer elemento que cumpla cierta condicion
 const paisCondicion = paises.find(pais => pais === 'Chile');
@@ -66,11 +89,14 @@ const paisCondicion = paises.find(pais => pais === 'Chile');
 //Retorna el elemento Chile sino undefine
 console.log(paisCondicion);
 
+console.log("------------------------------------")
+
 //Evalua una condicion en todos los elementos
 //Retorna true si todos los elementos la cumplen sino false
 const paisEvery = paises.every((pais)=> pais==='Chile');
 console.log(paisEvery);
 
+console.log("------------------------------------")
 
 //Concatenar dos array
 const numeros1 = ['uno','dos','tres'];
@@ -81,12 +107,16 @@ console.log([...numeros1,...numeros2]);
 //Se puede hacer con n arrays separando con una coma concat(numeros1, numeros2, numeros3)
 console.log(numeros1.concat(numeros2));
 
+console.log("------------------------------------")
 
 //Muestra el tamaño de un array en este caso 4(0,1,2,3)
 console.log(paises.length);
 
+console.log("------------------------------------")
+
 //Agregar, eliminar elementos
 let elementoArray = ['primero','segundo', 'tercero', 'cuarto'];
+
 
 //Agregar un elemento al incio del array
 elementoArray.unshift('Ante-primero');
