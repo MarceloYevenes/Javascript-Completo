@@ -34,15 +34,51 @@ clickEnlace.addEventListener('click',(e)=>{
 
 
 //Detecta scroll en la ventana
+const elementoLista = document.querySelector('#Ultimo-elemento');
 window.addEventListener('scroll',(e)=>{
-    const elementoLista = document.querySelector('#Ultimo-elemento');
+    
     //Permite saber a que distancia estoy del elemento
     const ubicacionElemento = elementoLista.getBoundingClientRect();
     console.log(ubicacionElemento);
 });
 
+//Evitar propagacion(Bubling)
+//Se le de un evento a un elemento de la lista tiene un evento
+/* elementoLista.addEventListener('click',e=>{
+    e.stopPropagation();
+    console.log('clickear un elemento');
+})
+
+//Se le de un evento ahora al elemento padre(lista completa)
+const eventoLista = document.addEventListener('click',(e)=>{
+    //e.stopPropagation();
+    console.log(e.target);
+}) */
+
+/*Al hacer click en el elemento de la lista se ejecutan ambos eventos
+Y no solo un evento, para detener esto se utilizan dos formas con
+e.stopPropagation() en ambos eventos*/
+
+//Evitar propagacion segunda forma:
+
+const selectorGeneral = document.querySelector('.general');
+selectorGeneral.addEventListener('click',(e)=>{
+    if(e.target.classList.contains("Ultimo-elemento")){
+        console.log("Elemento 7");
+    }else{
+        console.log("Lista");
+    }
+});
+
+
+
 //Eventos con imagenes
 const selectorImagen = document.querySelector('.imagen');
+
+//Detectar cuando una imagen se carga
+selectorImagen.addEventListener('load',()=>{
+    console.log('La imagen se carga correctamente');
+})
 
 
 
